@@ -3,12 +3,12 @@ using System.Collections;
 
 public class OnClick : MonoBehaviour {
 	public int type;
-	private Script1 s;
+	private Game g;
 	private Transform t;
 
 	void Start(){
 		t = transform;
-		s = t.parent.GetComponent<Script1> ();
+		g = t.parent.GetComponent<Game> ();
 		type = Random.Range (1, 4);
 		switch (type) {
 			case 1:{
@@ -25,7 +25,7 @@ public class OnClick : MonoBehaviour {
 	}
 
 	public void Check(){
-		s.CheckSides (t.position, type);
+		g.CheckSides (t.position, type);
 	}
 
 	void OnMouseDown(){
